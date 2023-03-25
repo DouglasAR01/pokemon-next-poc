@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="text-primary">
-      Hola
+      <Link href="/login">Ir a login</Link>
     </div>
   )
 }
