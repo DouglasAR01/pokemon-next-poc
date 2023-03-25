@@ -21,7 +21,7 @@ export default function App({
       initialSession={pageProps.initialSession}
     >
       <AuthServiceProvider>
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </AuthServiceProvider>
     </SessionContextProvider>
   );

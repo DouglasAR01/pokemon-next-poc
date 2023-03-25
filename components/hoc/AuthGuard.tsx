@@ -1,6 +1,7 @@
 import useAuthStore from "@/stores/authStore";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
+import AuthLayout from "../AuthLayout";
 
 interface Props {
   children: ReactNode;
@@ -19,5 +20,5 @@ export default function AuthGuard({ children }: Props) {
   if (loading) {
     return <p>Loading...</p>;
   }
-  return <>{children}</>;
+  return <AuthLayout>{children}</AuthLayout>;
 }
