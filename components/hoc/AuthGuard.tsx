@@ -1,15 +1,23 @@
 import useAuthStore from "@/stores/authStore";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface Props {
   children: ReactNode;
 }
 
-export default function GuestGuard({ children }: Props) {
+export default function AuthGuard({ children }: Props) {
   const authStore = useAuthStore();
   const router = useRouter();
-  if (!authStore.isLoggedIn) return router.push("/login");
-
+  const [loading, setLoading] = useState<boolean>(false);
+  useEffect(() => {
+    if (!authStore.isLoggedIn) {
+      setLoading(true);
+      router.push("/login");
+    }
+  }, [authStore.isLoggedIn]);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return <>{children}</>;
 }
