@@ -7,6 +7,6 @@ export type Pokemon = {
 }
 
 
-export interface IPokemonWithFav extends Pokemon {
+export interface PokemonWithFav extends Pokemon {
   favorite: boolean
 }

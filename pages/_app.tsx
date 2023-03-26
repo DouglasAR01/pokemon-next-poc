@@ -2,6 +2,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
+import "../styles/containers.css";
 import type { AppProps } from "next/app";
 import AuthServiceProvider from "@/components/hoc/AuthServiceProvider";
 import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
