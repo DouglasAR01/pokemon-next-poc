@@ -14,7 +14,7 @@ export default function AuthGuard({ children }: Props) {
   useEffect(() => {
     if (!authStore.isLoggedIn) {
       setLoading(true);
-      router.push("/login");
+      router.push("/");
     }
   }, [authStore.isLoggedIn]);
   if (loading) {
