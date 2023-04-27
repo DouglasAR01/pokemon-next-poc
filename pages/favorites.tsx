@@ -3,7 +3,7 @@ import AuthGuard from "../components/hoc/AuthGuard";
 import ThePokemonList from "@/components/pokemon/ThePokemonList";
 import { Pokemon, PokemonWithFav } from "@/types";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
-export default function dashboard() {
+export default function Favorites() {
   const [pokemons, setPokemons] = useState<PokemonWithFav[] | number[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const supabase = useSupabaseClient();
